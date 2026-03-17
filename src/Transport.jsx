@@ -9,35 +9,9 @@ export default function Transport() {
 
   }
 
-  const [orderId, setOrderId] = useState("");
   const [status, setStatus] = useState("");
 
-  const trackOrder = () => {
-
-    if (orderId >= 100 && orderId <= 300) {
-      setStatus("Farm Pickup 🚜");
-    }
-
-    else if (orderId > 300 && orderId <= 600) {
-      setStatus("Sent to Airport 🚚");
-    }
-
-    else if (orderId > 600 && orderId <= 800) {
-      setStatus("In Flight ✈");
-    }
-
-    else if (orderId > 800) {
-      setStatus("Order Delivered ✅");
-    }
-
-    else {
-      setStatus("Invalid Order ID");
-    }
-
-  };
-
-
-
+  
   const products = [
     {name:"Rice",price:80 ,img:"/rice.jpg"},
     {name:"Wheat",price:60,img:"/wheat2.jpg"},
@@ -116,21 +90,7 @@ export default function Transport() {
 
       </div>
 
-      <div className="Traking-id-input">
 
-        <h1>Order Transport Tracking</h1>
-
-        <input
-          type="text"
-          placeholder="Enter Order ID"
-          onChange={(e) => setOrderId(e.target.value)}
-        />
-
-        <Link to="/Kart"><button onClick={trackOrder}>Track Order</button></Link>
-
-        <h3>{status}</h3>
-
-      </div>
 
     </div>
 
