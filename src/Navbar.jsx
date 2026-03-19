@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { PiShoppingCart } from "react-icons/pi";
 
 export default function Navbar() {
+    const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const loggedUser = JSON.parse(localStorage.getItem("user"));
+    setUser(loggedUser);
+  }, []);
+
   return (
     <div>
 
@@ -13,8 +21,10 @@ export default function Navbar() {
             <li><Link to="/Products">Products</Link></li>
             <li><Link to="/Transport">Selection</Link></li>
             <li><Link to="/Contact">Contact</Link></li>
+            <div>
+              <li><Link to="/Cart"><PiShoppingCart/>Cart</Link></li>
+            </div>
             <Link to="/Login"><button>Login</button></Link>
-            <Link to="/Signup"><button>Signup</button></Link>
         </ul>
 
       </div>

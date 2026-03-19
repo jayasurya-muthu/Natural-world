@@ -1,9 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { IoPersonCircleSharp } from "react-icons/io5";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate=useNavigate();
+
+  const createAccount=()=>{
+    navigate("/Singup")
+  }
+
+
   const [Email, setEmail] = useState();
   const [Password, setPassword] = useState();
   const [Check, setCheck] = useState(false);
@@ -55,11 +62,15 @@ export default function Login() {
           <br />
           <input type="password" placeholder='Password' onChange={(e) => { setPassword(e.target.value) }} required/>
           <br />
-          <span><Link to='/Forgotpage'>Forgot Password</Link></span>
-          <br />
           <label><input type="checkbox" onChange={(e) => { setCheck(e.target.checked) }} />Remember Me</label>
           <br />
           <button onClick={dataLogin}>Login</button>
+          <br />
+          <span><Link to='/Forgotpage'>Forgot Password</Link></span>
+          <br/>
+          <div className="create-account">
+            <button onClick={createAccount}>Create New Account</button>
+          </div>
 
         </div>
       </div>

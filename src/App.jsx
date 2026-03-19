@@ -9,10 +9,10 @@ import Products from './Products'
 import Transport from './Transport'
 import Contact from './Contact'
 import Login from './Login'
-import Singup from './Singup'
 import Forgotpage from './Forgotpage'
 import TodayMarketing from './TodayMarketing'
-import Kart from './Kart'
+import Singup from './Singup'
+import Cart from './Cart'
 
 function App() {
 
@@ -27,10 +27,10 @@ function App() {
       <Route path="/Transport" element={<Transport/>}/>
       <Route path="/Contact" element={<Contact/>}/>
       <Route path="/Login" element={<Login/>}/>
-      <Route path="/Signup" element={<Singup/>}/>
       <Route path="/Forgotpage"element={<Forgotpage/>}/>
       <Route path="/TodayMarketing"element={<TodayMarketing/>}/>
-      <Route path="/kart"element={<Kart/>}/>
+      <Route path="/Cart"element={<Cart/>}/>
+      <Route path="/Singup" element={<Singup/>}/>
     </Routes>
       
     </>
