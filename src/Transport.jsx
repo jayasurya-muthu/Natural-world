@@ -11,7 +11,7 @@ export default function Transport() {
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
 
-    navigate("/Cart"); // go to cart page
+    navigate("/Cart"); 
   };
 
   const products = [
