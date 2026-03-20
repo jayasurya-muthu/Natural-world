@@ -27,6 +27,7 @@ export default function Login() {
           checked: Check
         })
       alert("Login Successfully")
+      navigate("/")
       getdata();
     }
     catch (error) {
@@ -44,7 +45,6 @@ export default function Login() {
   }
   useEffect(() => {
     getdata();
-
   }, [])
   return (
     <div>

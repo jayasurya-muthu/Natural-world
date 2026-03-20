@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Transport() {
-  const navigate = useNavigate();
-
   const addToCart = (item) => {
     let existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -11,7 +8,6 @@ export default function Transport() {
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
 
-    navigate("/Cart"); 
   };
 
   const products = [

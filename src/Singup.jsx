@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+  const navigate = useNavigate();
 
   const [username, setUserName] = useState("");
   const [useremail, setUserEmail] = useState("");
@@ -32,6 +34,7 @@ export default function Signup() {
       );
 
       alert("Signup Successful");
+      navigate("/Login")
       getdata();
 
     } catch (error) {
@@ -96,14 +99,13 @@ export default function Signup() {
             onChange={(e) => setRepassword(e.target.value)} required />
           <br />
 
-          {/* ✅ SHOW ERROR HERE */}
           {repassword && userpassword !== repassword && (
             <p style={{ color: "red", fontSize: "14px" }}>
               Passwords do not match
             </p>
           )}
 
-          <button
+          <button onClick={()=>navigate("/Login")}
             type="submit"
             disabled={userpassword !== repassword}
           >
