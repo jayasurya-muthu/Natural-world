@@ -16,7 +16,6 @@ export default function Signup() {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    // ✅ PASSWORD CHECK
     if (userpassword !== repassword) {
       alert("Password and Confirm Password do not match");
       return;
@@ -105,10 +104,7 @@ export default function Signup() {
             </p>
           )}
 
-          <button onClick={()=>navigate("/Login")}
-            type="submit"
-            disabled={userpassword !== repassword}
-          >
+          <button type="submit" disabled={userpassword !== repassword}>
             Signup
           </button>
 

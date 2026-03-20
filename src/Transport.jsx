@@ -6,6 +6,8 @@ export default function Transport() {
 
     existingCart.push(item);
 
+    alert("Adding"+" "+item.name)
+
     localStorage.setItem("cart", JSON.stringify(existingCart));
 
   };
@@ -32,8 +34,6 @@ export default function Transport() {
     { name: "Cauliflower", price: "70 / Kg", img: "/cauliflower.webp" },
     { name: "Turmeric", price: "350 / Kg", img: "/manjal.webp" }
   ];
-
-  const [cart, setCart] = useState([]);
 
   return (
     <div className="transporting-container">

@@ -17,23 +17,39 @@ export default function Login() {
 
   const [TotalData, setTotalData] = useState([])
 
-  const dataLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(`https://69afb59ec63dd197feb9e489.mockapi.io/farminglogin`,
-        {
-          email: Email,
-          password: Password,
-          checked: Check
+const dataLogin = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await axios.get(
+      "https://69afb59ec63dd197feb9e489.mockapi.io/farmingcontact"
+    );
+
+    const users = res.data;
+
+    const validUser = users.find(
+      (item) =>
+        item.Email === Email && item.Password === Password
+    );
+
+    if (validUser) {
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          username: validUser.Name
         })
-      alert("Login Successfully")
-      navigate("/")
-      getdata();
+      );
+
+      alert("Login Successful");
+      navigate("/");
+      window.location.reload();
+    } else {
+      alert("Invalid Email or Password");
     }
-    catch (error) {
-      alert('Failed to post data in login page ')
-    }
+  } catch (error) {
+    alert("Login Failed");
   }
+};
   const getdata = async () => {
     try {
       const responsive = await axios.get(`https://69afb59ec63dd197feb9e489.mockapi.io/farmingcontact`)
