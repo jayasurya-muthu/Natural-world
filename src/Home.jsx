@@ -14,7 +14,7 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
-          <h1>Global Agriculture Export</h1>
+          <h1>Global Agriculture Products</h1>
           <p>
             Delivering fresh and high quality agricultural products
             to customers around the world.
