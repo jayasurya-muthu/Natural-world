@@ -20,7 +20,7 @@ const products = [
     material: [
       { name: "Hard Red", img: "/hadredwheat.webp" },
       { name: "Soft Red", img: "/softred.webp" },
-      { name: "Soft White", img: "/softwhite.webp" },
+      { name: "Soft White", img: "/soft white1.webp" },
       { name: "Hard White", img: "/hardwhite.webp" },
       { name: "Durum", img: "/durum.webp" },
       { name: "Kamut", img: "/kamut.webp" },
