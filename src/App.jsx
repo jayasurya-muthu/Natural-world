@@ -13,6 +13,7 @@ import Forgotpage from './Forgotpage'
 import TodayMarketing from './TodayMarketing'
 import Singup from './Singup'
 import Cart from './Cart'
+import ViewMaterials from './ViewMaterials'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/TodayMarketing"element={<TodayMarketing/>}/>
       <Route path="/Cart"element={<Cart/>}/>
       <Route path="/Singup" element={<Singup/>}/>
+      <Route path="/ViewMaterials" element={<ViewMaterials/>}/>
     </Routes>
       
     </>

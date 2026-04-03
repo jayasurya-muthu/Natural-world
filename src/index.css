@@ -1561,3 +1561,224 @@
     height: 150px;
   }
 }
+
+.products-body h2{
+    padding-top:40px;
+    color:brown;
+}
+
+/*------------ View materials page----------*/
+
+/* ─── Page wrapper ─────────────────────────────────────── */
+.materials-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 40px);
+  font-family: sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f7f8fa;
+  margin-top:85px;
+}
+
+/* ─── Back button ───────────────────────────────────────── */
+.materials-body button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.2s, border-color 0.2s;
+  margin-top:45px;
+}
+
+.materials-body button:hover {
+  background: #f0f0f0;
+  border-color: #aaa;
+}
+
+/* ─── Page title ────────────────────────────────────────── */
+.materials-body h2 {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+}
+
+/* ─── Grid ──────────────────────────────────────────────── */
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+/* ─── Card ──────────────────────────────────────────────── */
+.material-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.material-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ─── Card image ────────────────────────────────────────── */
+.material-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #f0f0f0;
+}
+
+/* ─── Placeholder (when no image) ───────────────────────── */
+.material-placeholder {
+  width: 100%;
+  height: 110px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* ─── Card label ────────────────────────────────────────── */
+.material-card p {
+  margin: 0;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* ─── Error state ───────────────────────────────────────── */
+.error-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════════════════════════════════════ */
+
+/* Tablet — 2 to 3 columns */
+@media (max-width: 768px) {
+  .material-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 14px;
+  }
+
+  .material-card {
+    padding: 12px 10px;
+  }
+
+  .material-card img,
+  .material-placeholder {
+    height: 90px;
+  }
+
+  .material-placeholder {
+    font-size: 28px;
+  }
+}
+
+/* Mobile — 2 columns fixed */
+@media (max-width: 480px) {
+  .materials-body {
+    padding: 16px;
+  }
+
+  .material-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .material-card {
+    padding: 10px 8px;
+    border-radius: 10px;
+  }
+
+  .material-card img,
+  .material-placeholder {
+    height: 80px;
+  }
+
+  .material-placeholder {
+    font-size: 24px;
+  }
+
+  .material-card p {
+    font-size: 12px;
+  }
+
+  .materials-body h2 {
+    font-size: 18px;
+  }
+
+  .materials-body button {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
+
+/* Very small screens — 2 columns, tighter */
+@media (max-width: 360px) {
+  .material-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .material-card img,
+  .material-placeholder {
+    height: 70px;
+  }
+}
+
+
+/* Toast Message */
+.toast {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: sandybrown;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 0.3s ease;
+  z-index: 2000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
