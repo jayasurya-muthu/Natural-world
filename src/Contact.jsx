@@ -75,7 +75,7 @@ export default function Contact() {
         <br/>
 
       </div>
-      <footer className="tfooter">
+      <footer className="tfooter" style={{marginRight:"3%",marginBottom:"0"}}>
 
         <div className="footer-container">
 
