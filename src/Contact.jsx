@@ -112,7 +112,7 @@ export default function Contact() {
           {/* Contact */}
           <div className="footer-section">
             <h3>Contact</h3>
-            <p>Email: surya@agroexport.com</p>
+            <p>Email: jayasuriyamuthu004@gmail.com</p>
             <p>Phone: +91 6385529199</p>
             <p>Location: India</p>
           </div>
